@@ -18,7 +18,7 @@ int main()
     return 0;
 }
 
-int mutex_example() // ?? thread°¡ ¹ø°¥¾Æ°¡¸é¼­ WORK_FUNC°¡ ÀÛµ¿µÇ¾ßÇÒ °Í °°Àºµ¥, ±×³É THREAD1¿¡¼­¸¸ ÁøÇàµÈ´Ù...? mutex safe°¡ ÀÌ¹Ì Àû¿ëÀÌ µÈ °ÍÀÏ±î
+int mutex_example() // ?? threadê°€ ë²ˆê°ˆì•„ê°€ë©´ì„œ WORK_FUNCê°€ ì‘ë™ë˜ì•¼í•  ê²ƒ ê°™ì€ë°, ê·¸ëƒ¥ THREAD1ì—ì„œë§Œ ì§„í–‰ëœë‹¤...? mutex safeê°€ ì´ë¯¸ ì ìš©ì´ ëœ ê²ƒì¼ê¹Œ
 {
     auto work_func = []() {
         for (int i = 0; i < 100; i++)
@@ -26,7 +26,7 @@ int mutex_example() // ?? thread°¡ ¹ø°¥¾Æ°¡¸é¼­ WORK_FUNC°¡ ÀÛµ¿µÇ¾ßÇÒ °Í °°Àºµ¥
             //            mtx.lock();
             sum++;
             cout << std::this_thread::get_id << " " << sum << endl;
-            //coutÀÌ ÀÌ»óÇÏ°Ô ³ª¿À´Â°ÍÀº proper ÇÏ´Ù. Áß°£¿¡ thread°¡ ¹Ù²ğ ¼ö ÀÖ±â ¶§¹®
+            //coutì´ ì´ìƒí•˜ê²Œ ë‚˜ì˜¤ëŠ”ê²ƒì€ proper í•˜ë‹¤. ì¤‘ê°„ì— threadê°€ ë°”ë€” ìˆ˜ ìˆê¸° ë•Œë¬¸
             //            mtx.unlock();
         }
     };
@@ -49,4 +49,6 @@ int thread_create()
     return 1;
 }
 
-//ÀÌ¿Ü¿¡µµ download project µîÀÌ ÀÖ´Ù!
+//ì´ì™¸ì—ë„ download project ë“±ì´ ìˆë‹¤!
+//https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Operating%20System/%5BOS%5D%20System%20Call%20(Fork%20Wait%20Exec).md
+//ìœ„ì˜ ë§í¬ì²˜ëŸ¼, fork, exec, waitì„ ì´í•´í•  ìˆ˜ ìˆê²Œ ë˜ì—ˆë‹¤!
